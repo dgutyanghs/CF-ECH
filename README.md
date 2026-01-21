@@ -1,8 +1,6 @@
 # CFnew - 终端 v2.9.2
 
-**语言:** [中文](README.md) | [فارسی](فارسی.md)
-
-[Telegram 交流群](https://t.me/+ft-zI76oovgwNmRh)
+**语言:** [中文](README.md) 
 
 ## 主要功能
 
