@@ -1,24 +1,24 @@
 import { connect } from 'cloudflare:sockets';
 
-let at = '22206c58-ea8c-4678-828f-ca3fb0052426';
-let fallbackAddress = '';
-let socks5Config = '';
-let customPreferredIPs = [];
-let customPreferredDomains = [];
-let enableSocksDowngrade = false;
-let disableNonTLS = true;
-let disablePreferred = false;
+let at = '22206c58-ea8c-4678-828f-ca3fb0052426';//UUID
+let fallbackAddress = '';//备用地址
+let socks5Config = '';//socks5配置
+let customPreferredIPs = [];//自定义优选IP列表
+let customPreferredDomains = [];//自定义优选域名列表
+let enableSocksDowngrade = false; //禁用Socks5降级
+let disableNonTLS = true; //禁用非TLS连接
+let disablePreferred = false; //禁用优选IP
 
 let enableRegionMatching = true;
-let currentWorkerRegion = '';
-let manualWorkerRegion = '';
-let piu = '';
-let cp = '';
+let currentWorkerRegion = '';//当前worker所在区域    
+let manualWorkerRegion = '';//手动设置worker所在区域    
+let piu = ''; //yxURL变量，获取优选IP列表的URL链接
+let cp = '';//d 变量，取代UUID的自定义访问路径/后缀
 
-let ev = true;
-let et = false;
-let ex = false;
-let tp = '';
+let ev = true; // 启用VLESS
+let et = false; // 启用Trojan
+let ex = false; // 启用Xhttp
+let tp = ''; // Trojan密码, 如果启用Trojan则需要填写，不填默认为UUID
 // 启用ECH功能（true启用，false禁用）
 let enableECH = true;
 // 自定义DNS(DoH)服务器（默认：https://dns.alidns.com/dns-query）
@@ -28,14 +28,14 @@ let customECHDomain = 'cloudflare-ech.com';
 
 let scu = 'https://url.v1.mk/sub';
 // 远程配置URL（硬编码）
-const remoteConfigUrl = 'https://raw.githubusercontent.com/byJoey/test/refs/heads/main/tist.ini';
+const remoteConfigUrl = 'https://raw.githubusercontent.com/dgutyanghs/CF-ECH/refs/heads/main/tist.ini';
 
 let epd = false;   // 优选域名默认关闭
-let epi = true;
-let egi = true;
+let epi = true;  //启用优选IP
+let egi = true;   //启用优选域名
 
-let kvStore = null;
-let kvConfig = {};
+let kvStore = null; //KV存储
+let kvConfig = {};//KV配置
 
 const regionMapping = {
     'US': ['🇺🇸 美国', 'US', 'United States'],
@@ -2851,7 +2851,7 @@ async function handleSubscriptionPage(request, user = null) {
                                 <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0, 255, 0, 0.3);">
                                     <div style="margin-bottom: 10px;">
                                         <label style="display: inline-flex; align-items: center; cursor: pointer; color: #00ff00;">
-                                            <input type="checkbox" id="ech" style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
+                                            <input type="checkbox" checked id="ech" style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                                 <span style="font-size: 1.1rem;">${t.enableECH}</span>
                                         </label>
                                         <small style="color: #00aa00; font-size: 0.8rem; display: block; margin-top: 5px; margin-left: 26px;">${t.enableECHHint}</small>
