@@ -1,6 +1,6 @@
 import { connect } from 'cloudflare:sockets';
 
-let at = '22206c58-ea8c-4678-828f-ca3fb0052426';//UUID
+let at = 'eb262793-1d12-4501-9282-d24b85c0f574';//UUID
 let fallbackAddress = '';//备用地址
 let socks5Config = '';//socks5配置
 let customPreferredIPs = [];//自定义优选IP列表
@@ -2851,7 +2851,7 @@ async function handleSubscriptionPage(request, user = null) {
                                 <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(0, 255, 0, 0.3);">
                                     <div style="margin-bottom: 10px;">
                                         <label style="display: inline-flex; align-items: center; cursor: pointer; color: #00ff00;">
-                                            <input type="checkbox" checked id="ech" style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
+                                            <input type="checkbox"  id="ech" checked style="margin-right: 8px; width: 18px; height: 18px; cursor: pointer;">
                                                 <span style="font-size: 1.1rem;">${t.enableECH}</span>
                                         </label>
                                         <small style="color: #00aa00; font-size: 0.8rem; display: block; margin-top: 5px; margin-left: 26px;">${t.enableECHHint}</small>
@@ -6362,3 +6362,4 @@ async function fetchPreferredAPI(urls, defaultPort = '443', timeout = 3000) {
     }));
     return Array.from(results);
 }
+
